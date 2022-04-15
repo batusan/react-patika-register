@@ -6,7 +6,7 @@ import Rectangles from "../constants/Rectangles";
 function LeftPanel() {
   return (
     <div id="leftPanel">
-      <div id="leftInnerPanel" className="flex column full-h">
+      <div id="leftInnerPanel" className="flex column">
         <PatikaLogo />
         <div id="leftInnerTitle" className="font">
           YAZILIM PATİKALARI
