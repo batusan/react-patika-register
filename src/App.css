@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  --main-color: #444aff;
+  --text-color: #222;
+  --left-bg-color: #dedede;
+  --right-bg-color: #f0f0f0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body.dark-theme {
+  --text-color: #eee;
+  --left-bg-color: #8c8c8c;
+  --right-bg-color: #2c2c2c;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.font {
+  font-family: "Oxygen", sans-serif;
+}
+
+.flex {
   display: flex;
+}
+
+.column {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.full-h {
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wrapper {
+  height: 100%;
+}
+
+.wrapper > div {
+  height: 100%;
+  width: 50%;
+}
+
+#leftPanel {
+  background-color: var(--left-bg-color);
+  transition: all 0.5s;
+}
+
+#rightPanel {
+  background-color: var(--right-bg-color);
+  transition: all 0.5s;
+}
+
+#leftInnerPanel {
+  margin: 61px 0 0 56px;
+}
+
+#leftInnerTitle {
+  margin: 42px 0 0 0;
+
+  /*** FONT ***/
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 59px;
+  line-height: 74px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+
+  color: var(--main-color);
+}
+
+#leftInnerBody {
+  /* Headline 5 */
+
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 35px;
+
+  text-align: left;
+
+  margin: 29px 36px 0 0;
+
+  color: var(--main-color);
 }
