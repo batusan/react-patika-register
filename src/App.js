@@ -5,7 +5,7 @@ import RightPanel from "./components/RightPanel";
 
 function App() {
   return (
-    <div className="wrapper flex">
+    <div className="wrapper">
       <LeftPanel />
       <RightPanel />
     </div>

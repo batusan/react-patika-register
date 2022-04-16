@@ -11,6 +11,7 @@ body {
   --text-color: #444aff;
   --left-bg-color: #dedede;
   --right-bg-color: #f0f0f0;
+  --form-text-color: 3C3C3C;
 }
 
 body.dark-theme {
@@ -18,6 +19,7 @@ body.dark-theme {
   --text-color: #fefefe;
   --left-bg-color: #8c8c8c;
   --right-bg-color: #2c2c2c;
+  --form-text-color: #fefefe;
 }
 
 .font {
@@ -46,11 +48,13 @@ body.dark-theme {
 }
 
 #leftPanel {
+  position: fixed;
   background-color: var(--left-bg-color);
   transition: all 0.5s;
 }
 
 #rightPanel {
+  float: right;
   background-color: var(--right-bg-color);
   transition: all 0.5s;
   justify-content: center;
@@ -103,34 +107,29 @@ body.dark-theme {
 #registerWrapper {
   margin: 50px 0px;
   width: 70%;
-  background-color: #2c2c2c;
 }
 
-#registerTitle {
+#registerTitle > span {
   font-style: normal;
   font-weight: 700;
   font-size: 47px;
   line-height: 59px;
 
-  color: #fefefe;
+  color: var(--form-text-color);
   position: relative;
 }
 
-#registerTitle:after {
+#registerTitle > span:after {
   position: absolute;
   content: "";
-  height: 2px;
-
-  /****** 
- optional values below 
- ******/
+  height: 4px;
 
   /* center - (optional) use with adjusting width   */
   margin: 0 auto;
   left: 0;
   right: 50%;
   bottom: -20%;
-  width: 100%;
+  width: 120%;
   background: var(--main-color);
 
   /* optional animation */
@@ -139,6 +138,11 @@ body.dark-theme {
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+/* optional hover classes used with anmiation */
+#registerTitle > span:hover:after {
+  width: 170%;
 }
 
 #darkMode {
@@ -150,7 +154,139 @@ body.dark-theme {
   margin: 30px;
 }
 
-/* optional hover classes used with anmiation */
-#registerTitle:hover:after {
-  width: 170%;
+#registerForm {
+  height: 100%;
+  width: 100%;
+  margin: 80px 0 0 0;
+  flex-wrap: wrap;
+}
+
+.registerGroup {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.split {
+  width: 45% !important;
+}
+
+.double-input {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.registerGroup > label {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.15px;
+
+  color: var(--form-text-color);
+  margin-bottom: 12px;
+}
+
+.required::after {
+  content: " *";
+  color: red;
+}
+
+.registerGroup > input {
+  border: 2px solid #aaa;
+  height: 56px;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 0 22px;
+  font-size: 16px;
+  line-height: 20.2px;
+  letter-spacing: 0.15px;
+  color: var(--form-text-color);
+  outline: none;
+  width: calc(100% - 46px);
+}
+
+.registerGroup > input::placeholder {
+  color: var(--form-text-color);
+}
+
+.form-error {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.15px;
+
+  color: #ee6356;
+  padding-top: 5px;
+}
+
+#form-checkbox-label {
+  left: 24px;
+  bottom: -2px;
+  position: relative;
+  display: inline !important;
+
+  color: #8e8e8e !important;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  /* identical to box height */
+
+  letter-spacing: 0.1px;
+}
+
+#registerButton {
+  height: 56px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--main-color);
+  color: #f0f0f0;
+}
+
+/***** CUSTOM CHECKBOX *******/
+
+.round {
+  display: inline;
+  position: relative;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  cursor: pointer;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
 }
