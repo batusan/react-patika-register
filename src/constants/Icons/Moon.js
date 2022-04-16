@@ -5,9 +5,6 @@ function DarkLightIcon() {
     <svg
       width="48"
       height="48"
-      onClick={() => {
-        document.body.classList.toggle("dark-theme");
-      }}
       viewBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

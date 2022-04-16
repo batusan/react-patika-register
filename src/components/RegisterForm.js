@@ -1,29 +1,8 @@
 import React from "react";
-import { Formik, useFormik } from "formik";
-import * as yup from "yup";
+import { useFormik } from "formik";
+import { LoginSchema } from "../constants/LoginSchema";
 
 function RegisterForm() {
-  const LoginSchema = yup.object({
-    email: yup
-      .string()
-      .email("Lütfen geçerli bir eposta adresi giriniz.")
-      .required("Eposta alanı zorunludur."),
-    password: yup
-      .string()
-      .typeError("Her karakteri kullanamazsın.")
-      .min(8, "Şifreniz 8 karakterden az olamaz.")
-      .max(32, "Şifreniz 32 karakterden fazla olamaz.")
-      .required("Şifre alanı zorunludur."),
-    passwordConfirm: yup
-      .string()
-      .required("Şifre doğrulama alanı zorunludur.")
-      .oneOf(
-        [yup.ref("password"), null],
-        "Girdiğiniz şifreler uyuşmuyor. Tekrar deneyin."
-      ),
-    acceptTerms: yup.bool().oneOf([true], "Sözleşmeyi kabul etmelisin."),
-  });
-
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -43,6 +22,7 @@ function RegisterForm() {
   return (
     <div>
       <form id="registerForm" className="flex" onSubmit={formik.handleSubmit}>
+        {/* DOUBLE INPUT IN ROW */}
         <div className="double-input flex">
           <div className="registerGroup split">
             <label htmlFor="firstName" className="font">
@@ -151,7 +131,7 @@ function RegisterForm() {
           ) : null}
         </div>
         <div className="registerGroup">
-          <div class="round">
+          <div className="round">
             <input
               type="checkbox"
               name="acceptTerms"
@@ -159,7 +139,7 @@ function RegisterForm() {
               onChange={formik.handleChange}
               value={formik.values.acceptTerms}
             />
-            <label for="checkbox"></label>
+            <label htmlFor="checkbox"></label>
           </div>
           <label
             htmlFor="acceptTerms"
@@ -172,8 +152,7 @@ function RegisterForm() {
             <div className="form-error font">{formik.errors.acceptTerms}</div>
           ) : null}
         </div>
-
-        <button type="submit" id="registerButton">
+        <button type="submit" id="registerButton" className="transition-5">
           KAYIT OL
         </button>
       </form>

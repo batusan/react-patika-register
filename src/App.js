@@ -1,14 +1,18 @@
 import "./App.css";
 
 import LeftPanel from "./components/LeftPanel";
+import Loader from "./components/Loader";
 import RightPanel from "./components/RightPanel";
 
 function App() {
   return (
-    <div className="wrapper">
-      <LeftPanel />
-      <RightPanel />
-    </div>
+    <>
+      <Loader />
+      <div className="wrapper">
+        <LeftPanel />
+        <RightPanel />
+      </div>
+    </>
   );
 }
 

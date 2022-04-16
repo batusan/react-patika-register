@@ -11,44 +11,44 @@ function patikaLogo() {
     >
       <rect x="189" width="19" height="19" fill="#444AFF" />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M9 9H0V95H19V67H47V57H57V19H47V9H19H9ZM38 57V19H19V57H38Z"
         fill="#444AFF"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M189 29H179V39H189V95H208V39V29H189Z"
         fill="#444AFF"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M237 0H218V95H237V67H246V77H256V95H275V76H265V67H257V58H265V48H275V29H256V48H246V57H237V0Z"
         fill="#444AFF"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M132 9H151V28H171V38H151V85H171V95H141V85H132V9Z"
         fill="#444AFF"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M114 28H76V38H103V57H76V66H65V85H76V95H103H114H122V38H114V28ZM103 85V67H84V85H103Z"
         fill="#444AFF"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M333 29H295V39H322V58H295V67H284V86H295V96H322H333H341V39H333V29ZM322 86V68H303V86H322Z"
         fill="#444AFF"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M253 107H239V110H234V113H230V118.5H227V132.5H230V138H234V141H239V144H253V141H258V138H261V132.5H264V118.5H261V113H258V110H253V107Z"
         fill="#FFBF5E"
       />
